@@ -44,7 +44,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
                 activeColor: purple,
                 inactiveColor: Colors.black),
             BottomNavyBarItem(
-                icon: ImageIcon(AssetImage('assets/first-aid-kit.png'),size: 20,),
+                icon: const ImageIcon(AssetImage('assets/first-aid-kit.png'),size: 20,),
 
                 title: const Text(
                   'Doctor',
@@ -53,7 +53,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
                 activeColor: purple,
                 inactiveColor: Colors.black),
             BottomNavyBarItem(
-                icon: ImageIcon(AssetImage('assets/bubble-chat.png')),
+                icon:  const ImageIcon(AssetImage('assets/bubble-chat.png')),
                 title: const Text(
                   'chat',
                   style: TextStyle(color: purple, fontWeight: FontWeight.bold,fontSize: 16),
@@ -71,7 +71,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
                 activeColor: purple,
                 inactiveColor: Colors.black),
             BottomNavyBarItem(
-                icon: ImageIcon(AssetImage('assets/user.png')),
+                icon:const ImageIcon(AssetImage('assets/user.png')),
 
                 title: const Text(
                   'profile',
