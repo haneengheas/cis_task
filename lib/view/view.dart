@@ -37,115 +37,121 @@ class _DoctorsState extends State<Doctors> {
               ))
         ],
       ),
-      body: Column(
-        children: [
-          Row(
-            children: [
-              Container(
-                width: MediaQuery.of(context).size.width / 1.2,
-                height: 50,
-                margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-                child: TextFormField(
-                    decoration: InputDecoration(
-                        hintText: 'Search',
-                        hintStyle:
-                            const TextStyle(color: Colors.grey, fontSize: 18),
-                        prefixIcon: const Icon(
-                          Icons.search,
-                          size: 25,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width / 1.2,
+                  height: 45,
+                  margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                  child: TextFormField(
+                      decoration: InputDecoration(
+
+                          hintText: 'Search',
+                          hintStyle:
+                              const TextStyle(color: Colors.grey, fontSize: 18),
+                          prefixIcon: const Icon(
+                            Icons.search,
+                            size: 20,
+                          ),
+                          fillColor: Colors.grey.shade300,
+                          filled: true,
+
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
+                            borderSide: const BorderSide(
+                              color: Colors.white,
+                              width: 2.0,
+                            ),
+                          ))),
+                ),
+                IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.filter_list_outlined,
+                      color: purple,
+                      size: 40,
+                    ))
+              ],
+            ),
+            const StroyItem(),
+            SizedBox(
+              height: MediaQuery.of(context).size.height / 1.7,
+              width: MediaQuery.of(context).size.width,
+              child: StaggeredGridView.countBuilder(
+                staggeredTileBuilder: (index) =>
+                    StaggeredTile.count(1, index.isEven ? 1.4 : 1.1),
+                crossAxisSpacing: 4,
+                mainAxisSpacing: 4,
+                crossAxisCount: 2,
+                itemBuilder: (context, index) {
+                  return Container(
+                    height: 50,
+                    margin:
+                        const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
+                    padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: .5,
+                          )
+                        ],
+                        borderRadius: BorderRadius.circular(25)),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                          height: index.isEven ? 180 : 110,
+                          width: index.isEven ? 180 :170,
+                          child: ClipRRect(
+                            borderRadius: index.isEven
+                                ? BorderRadius.circular(10.0)
+                                : BorderRadius.circular(12.0),
+                            child: index.isEven?const Image(
+                              image:   AssetImage('assets/doctor.jpg'),fit: BoxFit.fill,
+                            ): const Image(
+                              image:  AssetImage('assets/doctor1.jpg'),fit: BoxFit.fitWidth,
+                            ),
+                          ),
                         ),
-                        fillColor: Colors.grey.shade100,
-                        filled: true,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
-                        ))),
-              ),
-              IconButton(
-                  onPressed: () {},
-                  icon: const Icon(
-                    Icons.filter_list_outlined,
-                    color: purple,
-                    size: 40,
-                  ))
-            ],
-          ),
-          const StroyItem(),
-          SizedBox(
-            height: MediaQuery.of(context).size.height / 1.7,
-            width: MediaQuery.of(context).size.width,
-            child: StaggeredGridView.countBuilder(
-              staggeredTileBuilder: (index) =>
-                  StaggeredTile.count(1, index.isEven ? 1.3 : 1),
-              crossAxisSpacing: 4,
-              mainAxisSpacing: 4,
-              crossAxisCount: 2,
-              itemBuilder: (context, index) {
-                return Container(
-                  height: 50,
-                  margin:
-                      const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
-                  padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.grey,
-                          blurRadius: .5,
+                        const Text(
+                          'Dr.hayile Siphron',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.w600),
+                        ),
+                        const Text(
+                          'Dentist',
+                          style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.grey),
+                        ),
+                        Row(
+                          children: const [
+                            Icon(
+                              Icons.star,
+                              color: Colors.yellow,
+                              size: 18,
+                            ),
+                            Text(
+                              '540 Reviews',
+                              style: TextStyle(color: Colors.black, fontSize: 14),
+                            ),
+                          ],
                         )
                       ],
-                      borderRadius: BorderRadius.circular(25)),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        height: index.isEven ? 150 : 115,
-                        // width: index.isEven ? 300 :150,
-
-                        padding: index.isEven
-                            ? const EdgeInsets.symmetric(
-                                vertical: 15)
-                            : const EdgeInsets.only(top:0),
-                        child: ClipRRect(
-                          borderRadius: index.isEven
-                              ? BorderRadius.circular(15.0)
-                              : BorderRadius.circular(15.0),
-                          child: const Image(
-                            image: AssetImage('assets/doctor1.jpg'),
-                          ),
-                        ),
-                      ),
-                      const Text(
-                        'Dr.hayile Siphron',
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.w600),
-                      ),
-                      const Text(
-                        'Dentist',
-                        style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.grey),
-                      ),
-                      Row(
-                        children: const [
-                          Icon(
-                            Icons.star,
-                            color: Colors.yellow,
-                            size: 18,
-                          ),
-                          Text(
-                            '540 Reviews',
-                            style: TextStyle(color: Colors.black, fontSize: 14),
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                );
-              },
-            ),
-          )
-        ],
+                    ),
+                  );
+                },
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

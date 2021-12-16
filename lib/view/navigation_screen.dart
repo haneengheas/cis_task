@@ -39,33 +39,24 @@ class _NavigationScreenState extends State<NavigationScreen> {
                 ),
                 title: const Text(
                   'Home',
-                  style: TextStyle(
-                    color: purple,
-                  ),
+                  style: TextStyle(color: purple, fontWeight: FontWeight.bold,fontSize: 16),
                 ),
                 activeColor: purple,
                 inactiveColor: Colors.black),
             BottomNavyBarItem(
-                icon: const Icon(
-                  Icons.work_outline,
-                ),
+                icon: ImageIcon(AssetImage('assets/first-aid-kit.png'),size: 20,),
+
                 title: const Text(
                   'Doctor',
-                  style: TextStyle(
-                    color: purple,
-                  ),
+                  style: TextStyle(color: purple, fontWeight: FontWeight.bold,fontSize: 16),
                 ),
                 activeColor: purple,
                 inactiveColor: Colors.black),
             BottomNavyBarItem(
-                icon: const Icon(
-                  Icons.chat_bubble_outline,
-                ),
+                icon: ImageIcon(AssetImage('assets/bubble-chat.png')),
                 title: const Text(
                   'chat',
-                  style: TextStyle(
-                    color: purple,
-                  ),
+                  style: TextStyle(color: purple, fontWeight: FontWeight.bold,fontSize: 16),
                 ),
                 activeColor: purple,
                 inactiveColor: Colors.black),
@@ -75,21 +66,16 @@ class _NavigationScreenState extends State<NavigationScreen> {
                 ),
                 title: const Text(
                   'archive',
-                  style: TextStyle(
-                    color: purple,
-                  ),
+                  style: TextStyle(color: purple, fontWeight: FontWeight.bold,fontSize: 16),
                 ),
                 activeColor: purple,
                 inactiveColor: Colors.black),
             BottomNavyBarItem(
-                icon: const Icon(
-                  Icons.person,
-                ),
+                icon: ImageIcon(AssetImage('assets/user.png')),
+
                 title: const Text(
                   'profile',
-                  style: TextStyle(
-                    color: purple,
-                  ),
+                  style: TextStyle(color: purple, fontWeight: FontWeight.bold,fontSize: 16),
                 ),
                 activeColor: purple,
                 inactiveColor: Colors.black),
